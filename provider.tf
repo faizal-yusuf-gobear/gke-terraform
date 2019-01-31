@@ -1,5 +1,5 @@
 provider "google" {
   credentials = "${file("./creds/serviceaccount.json")}"
-  project     = "faizal-gke-cluster"
+  project     = "my-gke-project"
   region      = "asia-southeast1-a"
 }
