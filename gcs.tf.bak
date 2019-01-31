@@ -1,0 +1,4 @@
+resource "google_storage_bucket" "terraform-backend" {
+  name     = "terraform-backend-1"
+  location = "asia-southeast1-a"
+}
