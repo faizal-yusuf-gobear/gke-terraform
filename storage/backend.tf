@@ -5,5 +5,5 @@ resource "google_storage_bucket" "gke-tf-state" {
 
 resource "google_storage_bucket_acl" "image-store-acl" {
   bucket = "${google_storage_bucket.gke-tf-state.name}"
-  predefined_acl = "publicreadwrite"
+  predefined_acl = "authenticatedRead"
 }
