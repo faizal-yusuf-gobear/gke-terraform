@@ -10,7 +10,7 @@ resource "google_container_cluster" "gke-cluster" {
 }
 
 resource "google_container_node_pool" "gke-cluster" {
-  name       = "primary-pool"
+  name       = "gke-app-1"
   cluster    = "${google_container_cluster.primary.name}"
   zone       = "asia-southeast1-a"
   node_count = "1"
