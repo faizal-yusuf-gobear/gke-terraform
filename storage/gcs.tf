@@ -5,9 +5,9 @@ resource "google_storage_bucket" "gke-tf-state" {
 
 resource "google_storage_bucket_acl" "tf-store-acl" {
   bucket = "${google_storage_bucket.gke-tf-state.name}"
-  predefined_acl = "authenticatedRead"
 
-    role_entity = [
-    "OWNER:faizalace84@gmail.com",
-    ]
+  role_entity = [
+    "OWNER:user-my.email@gmail.com",
+    "READER:group-mygroup",
+  ]
 }
