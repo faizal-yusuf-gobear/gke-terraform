@@ -22,4 +22,4 @@ cleanup(){
 }
 terraform init
 
-terraform apply
+terraform apply -yes
