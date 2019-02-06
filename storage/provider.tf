@@ -1,4 +1,4 @@
 provider "google" {
-  project     = "my-gke-project"
+  project     = "gke-app"
   region      = "asia-southeast1-a"
 }
