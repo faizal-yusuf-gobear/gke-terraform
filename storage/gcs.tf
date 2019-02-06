@@ -7,6 +7,6 @@ resource "google_storage_bucket_acl" "tf-store-acl" {
   bucket = "${google_storage_bucket.gke-tf-state.name}"
 
   role_entity = [
-    "OWNER:faizalace84@gmail.com",
+    "OWNER:user-faizalace84@gmail.com",
   ]
 }
