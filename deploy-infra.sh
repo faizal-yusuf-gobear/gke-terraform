@@ -22,4 +22,4 @@ cleanup(){
 }
 terraform init
 
-terraform apply -yes
+terraform apply -auto-approve
