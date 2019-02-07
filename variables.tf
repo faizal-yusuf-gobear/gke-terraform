@@ -8,7 +8,7 @@ variable "gcp_zone" {
 
 variable "gcp_project" {
   description = "GCP project name"
-  default = my-k8-app
+  default = "my-k8-app"
 }
 
 variable "cluster_name" {
