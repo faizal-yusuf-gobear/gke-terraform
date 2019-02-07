@@ -8,11 +8,12 @@ variable "gcp_zone" {
 
 variable "gcp_project" {
   description = "GCP project name"
+  default = my-k8-app
 }
 
 variable "cluster_name" {
   description = "Name of the K8s cluster"
-  default = "k8sexample-cluster"
+  default = "k8-cluster"
 }
 
 variable "initial_node_count" {
@@ -40,28 +41,28 @@ variable "node_disk_size" {
   default = "20"
 }
 
-variable "environment" {
-  description = "value passed to ACS Environment tag"
-  default = "dev"
-}
+#variable "environment" {
+#  description = "value passed to ACS Environment tag"
+#  default = "dev"
+#}
 
-variable "vault_user" {
-  description = "Vault userid: determines location of secrets and affects path of k8s auth backend"
-}
+#variable "vault_user" {
+#  description = "Vault userid: determines location of secrets and affects path of k8s auth backend"
+#}
 
-variable "vault_addr" {
-  description = "Address of Vault server including port"
-}
+#variable "vault_addr" {
+#  description = "Address of Vault server including port"
+#}
 
-variable "org_id" {
-  description = "The ID of the Google Cloud Organization."
-}
+#variable "org_id" {
+#  description = "The ID of the Google Cloud Organization."
+#}
 
-variable "billing_account_id" {
-  description = "The ID of the associated billing account (optional)."
-}
+#variable "billing_account_id" {
+#  description = "The ID of the associated billing account (optional)."
+#}
 
-variable "credentials_file_path" {
-  description = "Location of the credentials to use."
-  default     = "~/home/devops/.google_creds/serviceaccount.json"
-}
+#variable "credentials_file_path" {
+#  description = "Location of the credentials to use."
+#  default     = "~/home/devops/.google_creds/serviceaccount.json"
+#}
