@@ -70,14 +70,14 @@ resource "google_container_cluster" "k8sexample" {
 #}
 
 resource "google_sql_database_instance" "master" {
-  name = "master-instance"
+  name = "master-sqldb"
   database_version = "MYSQL_5_6"
   # First-generation instance regions are not the conventional
   # Google Compute Engine regions. See argument reference below.
   region = "${var.gcp_region}"
 
   settings {
-    tier = "D0"
+    tier = "db-f1-micro"
   }
 }
 
