@@ -1,5 +1,5 @@
 provider "google" {
-  project     = "${google_project.endpoints_project.project_id}"
+  project     = "gke-app-230805"
   region      = "${var.region}"
   credentials = "${file("${var.credentials_file_path}")}"
 }
