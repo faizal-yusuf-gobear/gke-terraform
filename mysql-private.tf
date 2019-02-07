@@ -3,7 +3,7 @@ resource "google_sql_database_instance" "master" {
   database_version = "MYSQL_5_6"
   # First-generation instance regions are not the conventional
   # Google Compute Engine regions. See argument reference below.
-  region = "asia-southeast1-a"
+  region = "asia-southeast1"
 
   settings {
     tier = "D0"
