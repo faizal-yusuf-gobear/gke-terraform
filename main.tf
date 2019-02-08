@@ -81,6 +81,6 @@ resource "google_container_cluster" "k8sexample" {
 #  }
 #}
 
-resource "google_compute_global_address" "default" {
-  name = "webapp-static-ip"
-}
+#resource "google_compute_global_address" "default" {
+#  name = "webapp-static-ip"
+#}
