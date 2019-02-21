@@ -3,7 +3,7 @@ terraform {
   backend "gcs" {
   	credentials = "${var.credentials_file_path}"
     bucket  = "gke-terraform-state2"
-    prefix  = "terraform/state"
+    prefix  = "terraform/tfstate"
   }
 }
 
