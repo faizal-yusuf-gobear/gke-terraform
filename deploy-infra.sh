@@ -22,4 +22,6 @@ cleanup(){
 }
 terraform init
 
-terraform apply -auto-approve
+terraform plan
+
+#terraform apply -auto-approve
