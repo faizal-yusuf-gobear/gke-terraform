@@ -5,7 +5,7 @@
 # Exit on ERR
 # Exit on undefined variable
 # Exit on pipe failures
-set -Eeuo pipefail
+set -euo pipefail
 # Useful variables
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Better error handling and exit cleanup
