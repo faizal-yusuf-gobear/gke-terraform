@@ -64,5 +64,5 @@ variable "node_disk_size" {
 
 variable "credentials_file_path" {
   description = "Location of the credentials to use."
-  default     = "/home/devops/.google_creds/serviceaccount.json"
+  default     = "/home/teamcity/.gcloud_creds/terraform/serviceaccount.json"
 }
