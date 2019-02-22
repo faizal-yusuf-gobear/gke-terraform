@@ -3,7 +3,7 @@ terraform {
   backend "gcs" {
   	#credentials = "${var.credentials_file_path}"
     bucket  = "terraform-state99"
-    prefix  = "terraform/state/"
+    prefix  = "state/"
   }
 }
 
@@ -25,11 +25,6 @@ provider "google" {
   credentials = "${var.credentials_file_path}"
   project     = "${var.gcp_project}"
   region      = "${var.gcp_region}"
-}
-
-resource "google_storage_bucket_acl" "image-store-acl" {
-  bucket = "${google_storage_bucket.terraform-state99.name}"
-  predefined_acl = "publicreadwrite"
 }
 
 resource "google_container_cluster" "k8sexample" {
