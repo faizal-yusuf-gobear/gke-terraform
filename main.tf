@@ -53,11 +53,11 @@ resource "google_container_cluster" "gkecluster" {
   }
 }
 
-resource "google_container_node_pool" "primary_preemptible_nodes" {
+resource "google_container_node_pool" "gkecluster_preemptible_nodes" {
   name       = "${var.nodepool_name}"
   region     = "${var.gcp_region}"
   cluster    = "${google_container_cluster.gkecluster.name}"
-  node_count = 1
+  node_count = "${var.initial_node_count"
 
   node_config {
     preemptible  = true
@@ -74,15 +74,15 @@ resource "google_container_node_pool" "primary_preemptible_nodes" {
 # The following outputs allow authentication and connectivity to the GKE Cluster
 # by using certificate-based authentication.
 output "client_certificate" {
-  value = "${google_container_cluster.primary.master_auth.0.client_certificate}"
+  value = "${google_container_cluster.gkecluster.master_auth.0.client_certificate}"
 }
 
 output "client_key" {
-  value = "${google_container_cluster.primary.master_auth.0.client_key}"
+  value = "${google_container_cluster.gkecluster.master_auth.0.client_key}"
 }
 
 output "cluster_ca_certificate" {
-  value = "${google_container_cluster.primary.master_auth.0.cluster_ca_certificate}"
+  value = "${google_container_cluster.gkecluster.master_auth.0.cluster_ca_certificate}"
 }
 
 #resource "null_resource" "auth_config" {
