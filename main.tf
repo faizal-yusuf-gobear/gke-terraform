@@ -1,7 +1,7 @@
 terraform {
   required_version = ">= 0.11.0"
   backend "gcs" {
-  	credentials = "${var.credentials_file_path}"
+  	#credentials = "${var.credentials_file_path}"
     bucket  = "terraform-state99"
     prefix  = "terraform/state/"
   }
