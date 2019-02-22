@@ -62,7 +62,7 @@ variable "node_disk_size" {
 #  description = "The ID of the associated billing account (optional)."
 #}
 
-variable "credentials_file_path" {
-  description = "Location of the credentials to use."
-  default     = "/home/teamcity/.gcloud_creds/terraform/serviceaccount.json"
-}
+#variable "credentials_file_path" {
+#  description = "Location of the credentials to use."
+#  default     = "/home/teamcity/.gcloud_creds/terraform/serviceaccount.json"
+#}

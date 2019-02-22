@@ -22,7 +22,7 @@ terraform {
 #}
 
 provider "google" {
-  credentials = "${var.credentials_file_path}"
+  #credentials = "${var.credentials_file_path}"
   project     = "${var.gcp_project}"
   region      = "${var.gcp_region}"
 }
