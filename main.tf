@@ -62,6 +62,7 @@ resource "google_container_node_pool" "gkecluster_preemptible_nodes" {
   node_config {
     preemptible  = true
     machine_type = "${var.node_machine_type}"
+    disk_size_gb = "${var.node_disk_size}"
     oauth_scopes = [
       "https://www.googleapis.com/auth/compute",
       "https://www.googleapis.com/auth/devstorage.read_only",
