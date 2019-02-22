@@ -27,6 +27,11 @@ provider "google" {
   region      = "${var.gcp_region}"
 }
 
+resource "google_storage_bucket_acl" "image-store-acl" {
+  bucket = "${google_storage_bucket.terraform-state99.name}"
+  predefined_acl = "publicreadwrite"
+}
+
 resource "google_container_cluster" "k8sexample" {
   name               = "${var.cluster_name}"
   description        = "example k8s cluster"
