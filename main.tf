@@ -55,7 +55,7 @@ resource "google_container_cluster" "gkecluster" {
 
 resource "google_container_node_pool" "gkecluster_preemptible_nodes" {
   name       = "${var.nodepool_name}"
-  region     = "${var.gcp_region}"
+  zone       = "${var.gcp_zone}"
   cluster    = "${google_container_cluster.gkecluster.name}"
   node_count = "${var.initial_node_count}"
 
