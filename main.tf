@@ -2,7 +2,7 @@ terraform {
   required_version = ">= 0.11.0"
   backend "gcs" {
   	credentials = "${var.credentials_file_path}"
-    bucket  = "gke-terraform-state2"
+    bucket  = "terraform-state99"
     prefix  = "terraform/state/"
   }
 }
