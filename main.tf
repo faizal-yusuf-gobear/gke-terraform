@@ -34,7 +34,7 @@ resource "google_compute_global_address" "static-ip" {
 resource "google_compute_instance" "default" {
   name         = "test"
   machine_type = "${var.node_machine_type}"
-  zone         = "${var.gcp_zone}"
+  region         = "${var.gcp_region}"
 
   tags = ["foo", "bar"]
 
