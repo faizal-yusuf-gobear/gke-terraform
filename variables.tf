@@ -13,7 +13,7 @@ variable "gcp_project" {
 
 variable "cluster_name" {
   description = "Name of the K8s cluster"
-  default = "jenkins"
+  default = "gke-app"
 }
 
 variable "nodepool_name" {
@@ -45,6 +45,12 @@ variable "node_disk_size" {
   description = "Node disk size in GB"
   default = "10"
 }
+
+variable "node_os_image" {
+  default = "centos-cloud/centos-7"
+}
+
+
 
 #variable "environment" {
 #  description = "value passed to ACS Environment tag"

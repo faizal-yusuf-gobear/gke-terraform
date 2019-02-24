@@ -27,7 +27,7 @@ provider "google" {
   region      = "${var.gcp_region}"
 }
 
-resource "google_compute_address" "static-ip" {
+resource "google_compute_global_address" "static-ip" {
   name = "static-ip-address"
 }
 
@@ -40,14 +40,14 @@ resource "google_compute_instance" "default" {
 
   boot_disk {
     initialize_params {
-      image = "centos-cloud/centos7"
+      image = "${var.node_os_image}"
     }
   }
 
   network_interface {
     network = "default"
     access_config {
-      nat_ip = "${google_compute_address.static-ip.address}"
+      nat_ip = "${google_compute_global_address.static-ip.address}"
     }
   }
 }
@@ -139,8 +139,4 @@ resource "google_container_node_pool" "gkecluster_nodes" {
 #  settings {
 #    tier = "db-f1-micro"
 #  }
-#}
-
-#resource "google_compute_global_address" "default" {
-#  name = "webapp-static-ip"
 #}
