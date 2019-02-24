@@ -27,6 +27,10 @@ provider "google" {
   region      = "${var.gcp_region}"
 }
 
+resource "google_compute_address" "static-ip" {
+  name = "static-ip-address"
+}
+
 resource "google_compute_instance" "default" {
   name         = "test"
   machine_type = "${var.node_machine_type}"
@@ -37,6 +41,13 @@ resource "google_compute_instance" "default" {
   boot_disk {
     initialize_params {
       image = "centos-cloud/centos7"
+    }
+  }
+
+  network_interface {
+    network = "default"
+    access_config {
+      nat_ip = "${google_compute_address.static-ip.address}"
     }
   }
 }
