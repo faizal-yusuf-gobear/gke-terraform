@@ -27,14 +27,14 @@ provider "google" {
   region      = "${var.gcp_region}"
 }
 
-resource "google_compute_global_address" "static-ip" {
+resource "google_compute_address" "static-ip" {
   name = "static-ip-address"
 }
 
 resource "google_compute_instance" "default" {
   name         = "test"
   machine_type = "${var.node_machine_type}"
-  region         = "${var.gcp_region}"
+  zone         = "${var.gcp_zone"
 
   tags = ["foo", "bar"]
 
@@ -47,7 +47,7 @@ resource "google_compute_instance" "default" {
   network_interface {
     network = "default"
     access_config {
-      nat_ip = "${google_compute_global_address.static-ip.address}"
+      nat_ip = "${google_compute_address.static-ip.address}"
     }
   }
 }
