@@ -1,7 +1,6 @@
 terraform {
   required_version = ">= 0.11.0"
   backend "gcs" {
-  	#credentials = "${var.credentials_file_path}"
     bucket  = "tfstate"
     prefix  = "state/"
   }
@@ -22,7 +21,6 @@ terraform {
 #}
 
 provider "google" {
-  #credentials = "${var.credentials_file_path}"
   project     = "${var.gcp_project}"
   region      = "${var.gcp_region}"
 }
@@ -67,7 +65,7 @@ resource "google_container_cluster" "gkecluster" {
   }
 
   node_config {
-    machine_type = ""
+    machine_type = "${var.node_machine_type}"
     disk_size_gb = "${var.node_disk_size}"
     oauth_scopes = [
       "https://www.googleapis.com/auth/compute",
