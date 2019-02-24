@@ -39,6 +39,7 @@ resource "google_compute_instance" "default" {
       image = "centos-cloud/centos7"
     }
   }
+}
 
 resource "google_container_cluster" "gkecluster" {
   name               = "${var.cluster_name}"
