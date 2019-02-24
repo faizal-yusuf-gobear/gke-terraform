@@ -13,7 +13,7 @@ variable "gcp_project" {
 
 variable "cluster_name" {
   description = "Name of the K8s cluster"
-  default = "Jenkins"
+  default = "jenkins"
 }
 
 variable "nodepool_name" {
