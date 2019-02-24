@@ -32,7 +32,7 @@ resource "google_compute_address" "static-ip" {
 }
 
 resource "google_compute_instance" "default" {
-  name         = "test"
+  name         = "artifactory"
   machine_type = "${var.node_machine_type}"
   zone         = "${var.gcp_zone}"
 
