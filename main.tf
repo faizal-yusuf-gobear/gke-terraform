@@ -27,6 +27,19 @@ provider "google" {
   region      = "${var.gcp_region}"
 }
 
+resource "google_compute_instance" "default" {
+  name         = "test"
+  machine_type = "${var.node_machine_type}"
+  zone         = "${var.gcp_zone}"
+
+  tags = ["foo", "bar"]
+
+  boot_disk {
+    initialize_params {
+      image = "centos-cloud/centos7"
+    }
+  }
+
 resource "google_container_cluster" "gkecluster" {
   name               = "${var.cluster_name}"
   description        = "example k8s cluster"
@@ -42,7 +55,7 @@ resource "google_container_cluster" "gkecluster" {
   }
 
   node_config {
-    machine_type = "${var.node_machine_type}"
+    machine_type = ""
     disk_size_gb = "${var.node_disk_size}"
     oauth_scopes = [
       "https://www.googleapis.com/auth/compute",
