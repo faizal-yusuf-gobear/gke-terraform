@@ -2,7 +2,7 @@ terraform {
   required_version = ">= 0.11.0"
   backend "gcs" {
   	#credentials = "${var.credentials_file_path}"
-    bucket  = "terraform-state99"
+    bucket  = "tfstate"
     prefix  = "state/"
   }
 }
@@ -60,7 +60,7 @@ resource "google_container_node_pool" "gkecluster_preemptible_nodes" {
   node_count = "${var.initial_node_count}"
 
   node_config {
-    preemptible  = true
+    preemptible  = false
     machine_type = "${var.node_machine_type}"
     disk_size_gb = "${var.node_disk_size}"
     oauth_scopes = [
@@ -74,17 +74,17 @@ resource "google_container_node_pool" "gkecluster_preemptible_nodes" {
 
 # The following outputs allow authentication and connectivity to the GKE Cluster
 # by using certificate-based authentication.
-output "client_certificate" {
-  value = "${google_container_cluster.gkecluster.master_auth.0.client_certificate}"
-}
+#output "client_certificate" {
+#  value = "${google_container_cluster.gkecluster.master_auth.0.client_certificate}"
+#}
 
-output "client_key" {
-  value = "${google_container_cluster.gkecluster.master_auth.0.client_key}"
-}
+#output "client_key" {
+#  value = "${google_container_cluster.gkecluster.master_auth.0.client_key}"
+#}
 
-output "cluster_ca_certificate" {
-  value = "${google_container_cluster.gkecluster.master_auth.0.cluster_ca_certificate}"
-}
+#output "cluster_ca_certificate" {
+#  value = "${google_container_cluster.gkecluster.master_auth.0.cluster_ca_certificate}"
+#}
 
 #resource "null_resource" "auth_config" {
 #  provisioner "local-exec" {
