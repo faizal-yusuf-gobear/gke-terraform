@@ -38,7 +38,7 @@ variable "master_password" {
 
 variable "node_machine_type" {
   description = "GCE machine type"
-  default = "n1-standard-2"
+  default = "n1-standard-1"
 }
 
 variable "node_disk_size" {
