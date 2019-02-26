@@ -25,30 +25,30 @@ provider "google" {
   region      = "${var.gcp_region}"
 }
 
-resource "google_compute_address" "static-ip" {
-  name = "static-ip-address"
-}
+#resource "google_compute_address" "static-ip" {
+#  name = "static-ip-address"
+#}
 
-resource "google_compute_instance" "default" {
-  name         = "artifactory"
-  machine_type = "${var.node_machine_type}"
-  zone         = "${var.gcp_zone}"
+#resource "google_compute_instance" "default" {
+#  name         = "artifactory"
+#  machine_type = "${var.node_machine_type}"
+#  zone         = "${var.gcp_zone}"
 
-  tags = ["foo", "bar"]
+#  tags = ["foo", "bar"]
 
-  boot_disk {
-    initialize_params {
-      image = "${var.node_os_image}"
-    }
-  }
+#  boot_disk {
+#    initialize_params {
+#      image = "${var.node_os_image}"
+#    }
+#  }
 
-  network_interface {
-    network = "default"
-    access_config {
-      nat_ip = "${google_compute_address.static-ip.address}"
-    }
-  }
-}
+#  network_interface {
+#    network = "default"
+#    access_config {
+#      nat_ip = "${google_compute_address.static-ip.address}"
+#    }
+#  }
+#}
 
 resource "google_container_cluster" "gkecluster" {
   name               = "${var.cluster_name}"
