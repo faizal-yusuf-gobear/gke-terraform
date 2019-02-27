@@ -41,6 +41,11 @@ variable "node_machine_type" {
   default = "n1-standard-1"
 }
 
+variable "vm_machine_type" {
+  description = "GCE machine type"
+  default = "g1-small"
+}
+
 variable "node_disk_size" {
   description = "Node disk size in GB"
   default = "10"
