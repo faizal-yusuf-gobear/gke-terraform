@@ -29,18 +29,18 @@ provider "google" {
 #  name = "static-ip-address"
 #}
 
-#resource "google_compute_instance" "default" {
-#  name         = "repository"
-#  machine_type = "${var.vm_machine_type}"
-#  zone         = "${var.gcp_zone}"
+resource "google_compute_instance" "default" {
+  name         = "salt-master"
+  machine_type = "${var.vm_machine_type}"
+  zone         = "${var.gcp_zone}"
 
 #  tags = ["foo", "bar"]
 
-#  boot_disk {
-#    initialize_params {
-#      image = "${var.node_os_image}"
-#    }
-#  }
+  boot_disk {
+    initialize_params {
+      image = "${var.node_os_image}"
+    }
+  }
 
 #  network_interface {
 #    network = "default"
