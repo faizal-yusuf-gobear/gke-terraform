@@ -127,14 +127,14 @@ resource "google_container_node_pool" "gkecluster_nodes" {
 #  EOT
 #}
 
-resource "google_sql_database_instance" "master" {
-  name = "mysql-master"
-  database_version = "MYSQL_5_6"
+#resource "google_sql_database_instance" "master" {
+#  name = "mysql-master"
+#  database_version = "MYSQL_5_6"
    #First-generation instance regions are not the conventional
    #Google Compute Engine regions. See argument reference below.
-  region = "${var.gcp_region}"
+#  region = "${var.gcp_region}"
 
-  settings {
-    tier = "db-f1-micro"
-  }
-}
+#  settings {
+#    tier = "db-f1-micro"
+#  }
+#}
